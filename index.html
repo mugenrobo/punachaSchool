@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punacha Pariyalthadka Aided Higher Primary School</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav a {
+            color: white !important;
+        }
+        .jumbotron {
+            padding: 30px;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+        }
+        .section-title {
+            margin: 30px 0;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .lang-en, .lang-kn {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .jumbotron {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Selector -->
+    <div class="container text-right mt-3">
+        <label for="language" class="mr-2">Select Language:</label>
+        <select id="language" class="custom-select w-auto" onchange="toggleLanguage()">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ</option>
+        </select>
+    </div>
+
+    <!-- Header Section -->
+    <header class="container-fluid">
+        <h1 class="lang-en">Punacha Pariyalthadka Aided Higher Primary School</h1>
+        <h1 class="lang-kn">ಪುಣಚ ಪರಿಯಲ್ತಡ್ಕ ಸಹಾಯಧನಿತ ಉನ್ನತ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</h1>
+        <p class="lang-en">Empowering Rural Students for a Brighter Future</p>
+        <p class="lang-kn">ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಉತ್ತಮ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸುವುದು</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">PPAHP School</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link lang-en" href="#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#mission">ಧ್ಯೇಯ</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#values">Core Values</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#values">ಮೂಲ್ಯಗಳು</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#contact">ಸಂಪರ್ಕಿಸಿ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron Section -->
+    <div class="jumbotron">
+        <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
+        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಲ್ತಡ್ಕ ಸಹಾಯಧನಿತ ಉನ್ನತ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
+        <p class="lang-en">Providing quality education in a rural setting for underprivileged students.</p>
+        <p class="lang-kn">ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು.</p>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="container">
+        <div class="section-title text-center">
+            <h2 class="lang-en">Our Mission</h2>
+            <h2 class="lang-kn">ನಮ್ಮ ಧ್ಯೇಯ</h2>
+        </div>
+        <p class="lang-en">
+            At Punacha Pariyalthadka Aided Higher Primary School, our mission is to provide quality education in a rural setting, empowering children from underprivileged backgrounds with knowledge, skills, and values that will help them lead fulfilling lives.
+        </p>
+        <p class="lang-kn">
+            ಪುಣಚ ಪರಿಯಲ್ತಡ್ಕ ಸಹಾಯಧನಿತ ಉನ್ನತ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ, ನಮ್ಮ ಧ್ಯೇಯವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು ಮತ್ತು ಪಿಡಿಗೊತ್ತು ಹಿನ್ನೆಲೆಯ ಮಕ್ಕಳು ಶ್ರೇಷ್ಠ ಜೀವನವನ್ನು ನಡೆಸಲು ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವುದು.
+        </p>
+    </div>
+
+    <!-- Core Values Section -->
+    <div class="container mt-5">
+        <div class="section-title text-center">
+            <h2 class="lang-en">Our Core Values</h2>
+            <h2 class="lang-kn">ನಮ್ಮ ಮೂಲ್ಯಗಳು</h2>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item lang-en"><strong>Opportunity for All:</strong> Every child deserves access to quality education, regardless of background.</li>
+            <li class="list-group-item lang-kn"><strong>ಸಮಾನು ಅವಕಾಶ:</strong> ಪ್ರತಿಯೊಬ್ಬ ಮಕ್ಕಳೂ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣ ಪಡೆಯಲು ಅರ್ಹರು, ಅವರ ಹಿನ್ನೆಲೆ ಹೇಗೇ ಇರಲಿ.</li>
+            <li class="list-group-item lang-en"><strong>Community Support:</strong> We work with families and the community to ensure a nurturing environment.</li>
+            <li class="list-group-item lang-kn"><strong>ಸಮುದಾಯದ ಬೆಂಬಲ:</strong> ನಾವು ಕುಟುಂಬಗಳು ಮತ್ತು ಸಮುದಾಯದೊಂದಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ, ಬೆಳೆಸುವ ಪರಿಸರವನ್ನು ಖಾತ್ರಿಪಡಿಸಲು.</li>
+            <li class="list-group-item lang-en"><strong>Cultural Pride:</strong> We emphasize learning in Kannada, fostering a connection with local culture.</li>
+            <li class="list-group-item lang-kn"><strong>ಸಾಂಸ್ಕೃತಿಕ ಅಹಂಕಾರ:</strong> ಕನ್ನಡದಲ್ಲಿ ಶಿಕ್ಷಣ ನೀಡುವುದನ್ನು ನಾವು ಒತ್ತಿ ಹೇಳುತ್ತೇವೆ, ಸ್ಥಳೀಯ ಸಂಸ್ಕೃತಿಯೊಂದಿಗೆ ಸಂಪರ್ಕ ಕಲ್ಪಿಸುತ್ತೇವೆ.</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container mt-5 mb-5">
+        <div class="section-title text-center">
+            <h2 class="lang-en">Contact Us</h2>
+            <h2 class="lang-kn">ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
+        </div>
+        <p class="lang-en">Address: Punacha, Pariyalthadka, Karnataka, India</p>
+        <p class="lang-kn">ವಿಳಾಸ: ಪುಣಚ, ಪರಿಯಲ್ತಡ್ಕ, ಕರ್ನಾಟಕ, ಭಾರತ</p>
+        <p>Email: info@ppahp.com</p>
+        <p>Phone: +91-XXXXXXXXXX</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="lang-en">&copy; 2024 Punacha Pariyalthadka Aided Higher Primary School</p>
+        <p class="lang-kn">&copy; 2024 ಪುಣಚ ಪರಿಯಲ್ತಡ್ಕ ಸಹಾಯಧನಿತ ಉನ್ನತ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</p>
+    </footer>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleLanguage() {
+            var selectedLanguage = document.getElementById('language').value;
+            var englishElements = document.querySelectorAll('.lang-en');
+            var kannadaElements = document.querySelectorAll('.lang-kn');
+
+            if (selectedLanguage === 'en') {
+                englishElements.forEach(el => el.style.display = 'block');
+                kannadaElements.forEach(el => el.style.display = 'none');
+            } else {
+                englishElements.forEach(el => el.style.display = 'none');
+                kannadaElements.forEach(el => el.style.display = 'block');
+            }
+        }
+
+        window.onload = function() {
+            toggleLanguage();
+        };
+    </script>
+</body>
+</html>
