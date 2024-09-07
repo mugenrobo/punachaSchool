@@ -49,6 +49,9 @@
                 padding: 20px;
             }
         }
+        html {
+    scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -73,16 +76,18 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">PPAHP School</a>
+            <a class="navbar-brand" href="index.html">PPAHP School</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link lang-en" href="#mission">Mission</a></li>
-                    <li class="nav-item"><a class="nav-link lang-kn" href="#mission">ಧ್ಯೇಯ</a></li>
-                    <li class="nav-item"><a class="nav-link lang-en" href="#values">Core Values</a></li>
-                    <li class="nav-item"><a class="nav-link lang-kn" href="#values">ಪ್ರಮುಖ ಮೌಲ್ಯಗಳು</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#about">ನಮ್ಮ ಬಗ್ಗೆ</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#history">History</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#history">ಇತಿಹಾಸ</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#campus">Campus</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#contact">ಸಂಪರ್ಕಿಸಿ</a></li>
                 </ul>
@@ -91,7 +96,7 @@
     </nav>
 
     <!-- Jumbotron Section -->
-    <div class="jumbotron">
+    <div id="about" class="jumbotron">
         <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
         <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
         <p class="lang-en">Providing quality education in a rural setting for underprivileged students.</p>
@@ -128,8 +133,37 @@
         </ul>
     </div>
 
+    <!-- History Section -->
+    <div id="history" class="container mt-5">
+    <div class="section-title text-center">
+        <h2 class="lang-en">Our History</h2>
+        <h2 class="lang-kn">ನಮ್ಮ ಇತಿಹಾಸ</h2>
+    </div>
+    <p class="lang-en">
+        The school began as a small institution in 1970 and has grown to accommodate over 300 students today. Over the years, we have contributed significantly to the local community by producing top-performing students and responsible citizens.
+    </p>
+    <p class="lang-kn">
+        ಈ ಶಾಲೆಯನ್ನು 1970 ರಲ್ಲಿ ಒಂದು ಸಣ್ಣ ಸಂಸ್ಥೆಯಾಗಿ ಪ್ರಾರಂಭಿಸಲಾಯಿತು ಮತ್ತು ಇಂದು 300 ಕ್ಕೂ ಹೆಚ್ಚು ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಹೊಂದಿದೆ. ಈ ವರ್ಷಗಳಲ್ಲಿ, ನಾವು ಉನ್ನತ ಪ್ರದರ್ಶನದ ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಮತ್ತು ಜವಾಬ್ದಾರಿ ನಿಭಾಯಿಸುವ ನಾಗರಿಕರನ್ನು ಬೆಳೆಸಿ ಸ್ಥಳೀಯ ಸಮುದಾಯಕ್ಕೆ ಮಹತ್ವದ ಕೊಡುಗೆ ನೀಡಿದ್ದೇವೆ.
+    </p>
+    </div>
+
+    <!-- Campus Section -->
+    <div id="campus" class="container mt-5">
+    <div class="section-title text-center">
+        <h2 class="lang-en">Our Campus</h2>
+        <h2 class="lang-kn">ನಮ್ಮ ಆವರಣ</h2>
+    </div>
+    <p class="lang-en">
+        The school campus is situated in a serene rural setting, providing a peaceful environment conducive to learning. Our facilities include spacious classrooms, a library, playground, and computer lab.
+    </p>
+    <p class="lang-kn">
+        ಶಾಲೆಯ ಆವರಣವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಹೊಂದಲ್ಪಟ್ಟಿದೆ, ಇದು ಶಾಂತ ವಾತಾವರಣವನ್ನು ಕಲಿಕೆಯ ಸಂಬಂಧ ಅನುಕೂಲಕರವಾಗಿಸುತ್ತದೆ. ನಮ್ಮ ಸೌಕರ್ಯಗಳಲ್ಲಿ ವಿಶಾಲವಾದ ತರಗತಿ ಕೊಠಡಿಗಳು, ಗ್ರಂಥಾಲಯ, ಆಟದ ಮೈದಾನ ಮತ್ತು ಕಂಪ್ಯೂಟರ್ ಲ್ಯಾಬ್ ಅನ್ನು ಹೊಂದಿದೆ.
+    </p>
+    </div>
+
+
     <!-- Contact Section -->
-    <div class="container mt-5 mb-5">
+    <div  id="contact" class="container mt-5 mb-5">
         <div class="section-title text-center">
             <h2 class="lang-en">Contact Us</h2>
             <h2 class="lang-kn">ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
