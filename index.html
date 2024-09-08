@@ -16,11 +16,6 @@
             color: white;
             padding: 10px 0;
         }
-        header h1 {
-            font-size: 1.5em;
-            margin: 0;
-            display: inline-block;
-        }
         nav a {
             color: white !important;
             
@@ -51,6 +46,15 @@
         }
         .lang-en, .lang-kn {
             display: none;
+        }
+        /* Make logo responsive on smaller screens */
+        @media (max-width: 768px) {
+            .jumbotron .logo {
+            top: 10px;
+            right: 10px;
+            max-height: 80px;
+            width: auto;
+            }
         }
         @media (max-width: 768px) {
             header h1 {
@@ -243,6 +247,18 @@
         window.onload = function() {
             setLanguage('en'); // Set default language to English
         };
+
+        // Close the navbar after clicking a link (on mobile view)
+        document.querySelectorAll('.navbar-nav a').forEach(function (navLink) {
+            navLink.addEventListener('click', function() {
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+                
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();  // Trigger the collapse if the navbar is open
+                }
+            });
+        });
     </script>
 </body>
 </html>
