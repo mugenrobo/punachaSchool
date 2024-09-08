@@ -22,7 +22,11 @@
         }
         .jumbotron {
             position: relative;
-            padding: 20px;
+
+            
+
+            padding: 30px;
+
             background-color: #34495e;
             color: white;
             text-align: center;
@@ -30,10 +34,20 @@
         }
         .jumbotron .logo {
             position: absolute;
-            top: 2px; /* Adjust as needed */
-            left: 2px; /* Reduced right value for better alignment */
-            max-height: 100px; /* Smaller size for the logo */
-            width: auto; /* Keep the aspect ratio */
+
+            
+
+            top: 10px; /* Position logo slightly away from top */
+            left: 10px; /* Align logo to the left */
+            max-height: 80px; /* Control logo size for mobile */
+            width: auto; /* Maintain aspect ratio */
+        }
+        
+        /* Ensure text moves below the logo */
+        .jumbotron h2 {
+            margin-top: 100px; /* Add margin to push the text down */
+            padding: 0 20px;
+
         }
         /* Reduce the padding for the heading to ensure no overlap with the logo */
         .jumbotron h2 {
@@ -51,14 +65,20 @@
         .lang-en, .lang-kn {
             display: none;
         }
-       /* Adjust the logo alignment on smaller screens */
-        @media (max-width: 768px) {
+       /* Adjust logo size and positioning for larger screens */
+        @media (min-width: 768px) {
             .jumbotron .logo {
-            top: -20px; /* Adjust top position for mobile view */
-            left: 20px; /* Align closer to the right edge */
-           /* left: auto; /* Reset any left positioning */
-            max-height: 150px; /* Reduce logo size further for mobile */
-           /* width: auto; /* Maintain aspect ratio */
+
+          
+
+            top: -20px; /* Higher position for desktop */
+            left: 20px; /* Left-align the logo */
+            max-height: 150px; /* Larger logo for desktop */
+        }
+
+        .jumbotron h2 {
+            margin-top: 0; /* No need for extra margin on desktop */
+
             }
         }
         @media (max-width: 768px) {
@@ -94,14 +114,19 @@
             background-color: #34495e; /* Background color when hovering over an item */
             color: #f1c40f; /* Text color on hover */
         }
+
+        /* Add padding to each section to account for the fixed navbar */
+        section {
+            scroll-margin-top: 80px; /* Adjust this value based on your navbar's height */
+        }
     </style>
 </head>
 <body>
 
      <!-- Jumbotron Section -->
      <div class="jumbotron">
-        <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
-        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
+        <h2 class="lang-en"> Punacha Pariyalthadka Aided Higher Primary School</h2>
+        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</h2>
 
          <!-- Logo in the right corner of the Jumbotron -->
          <img src="assets/images/logo-no-bg.png" alt="School Logo" class="logo">
@@ -241,11 +266,12 @@
             if (language === 'en') {
                 englishElements.forEach(el => el.style.display = 'block');
                 kannadaElements.forEach(el => el.style.display = 'none');
-                languageDropdown.textContent = 'Select Language'; // Change text to English
+                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
+
             } else {
                 englishElements.forEach(el => el.style.display = 'none');
                 kannadaElements.forEach(el => el.style.display = 'block');
-                languageDropdown.textContent = 'ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ'; // Change text to Kannada
+                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
             }
         }
 
@@ -264,6 +290,22 @@
                 }
             });
         });
+
+        // Offset scroll for fixed navbar
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+        window.scrollTo({
+            top: targetElement.offsetTop - navbarHeight, // Adjust scroll position by navbar height
+            behavior: 'smooth' // Smooth scrolling effect
+        });
+    });
+});
     </script>
 </body>
 </html>
