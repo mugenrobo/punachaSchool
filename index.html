@@ -98,6 +98,11 @@
             background-color: #34495e; /* Background color when hovering over an item */
             color: #f1c40f; /* Text color on hover */
         }
+
+        /* Add padding to each section to account for the fixed navbar */
+        section {
+            scroll-margin-top: 80px; /* Adjust this value based on your navbar's height */
+        }
     </style>
 </head>
 <body>
@@ -268,6 +273,22 @@
                 }
             });
         });
+
+        // Offset scroll for fixed navbar
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+        window.scrollTo({
+            top: targetElement.offsetTop - navbarHeight, // Adjust scroll position by navbar height
+            behavior: 'smooth' // Smooth scrolling effect
+        });
+    });
+});
     </script>
 </body>
 </html>
