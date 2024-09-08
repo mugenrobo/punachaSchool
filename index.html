@@ -21,19 +21,23 @@
             
         }
         .jumbotron {
+            position: relative;
             padding: 30px;
             background-color: #34495e;
             color: white;
             text-align: center;
             margin-bottom: 0;
-            position: relative;
         }
         .jumbotron .logo {
             position: absolute;
-            top: -20px; /* Adjust as needed */
-            left: 20px; /* Reduced right value for better alignment */
-            max-height: 150px; /* Smaller size for the logo */
+            top: 2px; /* Adjust as needed */
+            left: 2px; /* Reduced right value for better alignment */
+            max-height: 100px; /* Smaller size for the logo */
             width: auto; /* Keep the aspect ratio */
+        }
+        /* Reduce the padding for the heading to ensure no overlap with the logo */
+        .jumbotron h2 {
+            padding-top: 10px; /* Add top padding to move the text below the logo */
         }
         .section-title {
             margin: 30px 0;
@@ -50,11 +54,11 @@
        /* Adjust the logo alignment on smaller screens */
         @media (max-width: 768px) {
             .jumbotron .logo {
-            top: 10px; /* Adjust top position for mobile view */
-            left: 10px; /* Align closer to the right edge */
+            top: -20px; /* Adjust top position for mobile view */
+            left: 20px; /* Align closer to the right edge */
            /* left: auto; /* Reset any left positioning */
-            max-height: 80px; /* Reduce logo size further for mobile */
-            width: auto; /* Maintain aspect ratio */
+            max-height: 150px; /* Reduce logo size further for mobile */
+           /* width: auto; /* Maintain aspect ratio */
             }
         }
         @media (max-width: 768px) {
