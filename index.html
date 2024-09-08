@@ -109,8 +109,8 @@
 
      <!-- Jumbotron Section -->
      <div class="jumbotron">
-        <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
-        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
+        <h2 class="lang-en"> Punacha Pariyalthadka Aided Higher Primary School</h2>
+        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</h2>
 
          <!-- Logo in the right corner of the Jumbotron -->
          <img src="assets/images/logo-no-bg.png" alt="School Logo" class="logo">
@@ -250,11 +250,12 @@
             if (language === 'en') {
                 englishElements.forEach(el => el.style.display = 'block');
                 kannadaElements.forEach(el => el.style.display = 'none');
-                languageDropdown.textContent = 'Select Language'; // Change text to English
+                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
+
             } else {
                 englishElements.forEach(el => el.style.display = 'none');
                 kannadaElements.forEach(el => el.style.display = 'block');
-                languageDropdown.textContent = 'ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ'; // Change text to Kannada
+                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
             }
         }
 
