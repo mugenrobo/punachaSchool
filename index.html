@@ -14,21 +14,32 @@
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 20px 0;
-            text-align: center;
+            padding: 10px 0;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 1.5em;
+            margin: 0;
+            display: inline-block;
         }
         nav a {
             color: white !important;
+            
         }
         .jumbotron {
             padding: 30px;
             background-color: #34495e;
             color: white;
             text-align: center;
+            margin-bottom: 0;
+            position: relative;
         }
+        .jumbotron .logo {
+            position: absolute;
+            top: -20px; /* Adjust as needed */
+            right: 1350px; /* Adjust as needed */
+            max-height: 150px; /* Smaller size for the logo */
+            width: auto; /* Keep the aspect ratio */
+}
         .section-title {
             margin: 30px 0;
         }
@@ -50,30 +61,45 @@
             }
         }
         html {
-    scroll-behavior: smooth;
+            scroll-behavior: smooth;
+        }
+        /* Make the navbar sticky */
+        .navbar {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        /* Custom styles for the dropdown menu */
+        .dropdown-menu {
+            background-color: #2c3e50; /* Background color of the dropdown */
+            border: none; /* Remove border if necessary */
+        }
+
+        /* Custom styles for the dropdown items */
+        .dropdown-item {
+            color: white; /* Text color for dropdown items */
+        }
+
+        .dropdown-item:hover {
+            background-color: #34495e; /* Background color when hovering over an item */
+            color: #f1c40f; /* Text color on hover */
         }
     </style>
 </head>
 <body>
 
-    <!-- Language Selector -->
-    <div class="container text-right mt-3">
-        <label for="language" class="mr-2">Select Language:</label>
-        <select id="language" class="custom-select w-auto" onchange="toggleLanguage()">
-            <option value="en">English</option>
-            <option value="kn">ಕನ್ನಡ</option>
-        </select>
+     <!-- Jumbotron Section -->
+     <div class="jumbotron">
+        <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
+        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
+
+         <!-- Logo in the right corner of the Jumbotron -->
+         <img src="assets/images/logo-no-bg.png" alt="School Logo" class="logo">
+
     </div>
 
-    <!-- Header Section -->
-   <!--<header class="container-fluid">
-        <h1 class="lang-en">Punacha Pariyalthadka Aided Higher Primary School</h1>
-        <h1 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</h1>
-        <p class="lang-en">Empowering Rural Students for a Brighter Future</p>
-        <p class="lang-kn">ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಉತ್ತಮ ಭವಿಷ್ಯವನ್ನು ರೂಪಿಸುವುದು</p>
-    </header>--> 
-
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with Language Selector -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">PPAHP School</a>
@@ -92,18 +118,23 @@
                     <li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#contact">ಸಂಪರ್ಕಿಸಿ</a></li>
+
+                    <!-- Language Selector in Navbar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Language
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a>
+                            <a class="dropdown-item" href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Jumbotron Section -->
-    <div class="jumbotron">
-        <h2 class="lang-en">Welcome to Punacha Pariyalthadka Aided Higher Primary School</h2>
-        <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗೆ ಸ್ವಾಗತ</h2>
-        <!--<p class="lang-en">Providing quality education in a rural setting for underprivileged students.</p>
-        <p class="lang-kn">ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು.</p> -->
-    </div>
+   
 
     <!-- Mission Section -->
     <div id="mission" class="container">
@@ -112,16 +143,10 @@
             <h2 class="lang-kn">ನಮ್ಮ ಧ್ಯೇಯ</h2>
         </div>
         <p class="lang-en">
-            <!--At Punacha Pariyalthadka Aided Higher Primary School, our mission is to provide quality education in a rural setting, 
-            empowering children from underprivileged backgrounds with knowledge, skills, and values that will help them lead fulfilling lives.-->
             Discipline, Honesty, and Self-Reliance: Fostering Moral Integrity and Holistic Development Through Unity in Diversity.
         </p>
         <p class="lang-kn">
-            <!--ನಮ್ಮ ಧ್ಯೇಯವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು ಮತ್ತು 
-            ಹಿಂದುಳಿದ ವರ್ಗದ ಮಕ್ಕಳ ಶ್ರೇಷ್ಠ ಜೀವನವನ್ನು ನಡೆಸಲು ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವುದು.-->
-            ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ,  ಶಿಸ್ತು, ಪ್ರಾಮಾಣಿಕತೆ, ಸ್ವಾವಲಂಬನೆಗೆ ಆದ್ಯತೆ. ಕರ್ತವ್ಯನಿಷ್ಠೆ, ಪರೋಪಕಾರ, 
-            ಸರ್ವ ಧರ್ಮ ಸಮನ್ವಯದ ಸರ್ವತೋಮುಖ ಬೆಳವಣಿಗೆಯ ಆದ್ಯತೆಯೊಂದಿಗೆ ನೈತಿಕ ಶಿಕ್ಷಣದ ಗುರಿಯೇ ನಮ್ಮ ಧ್ಯೇಯ.
-
+            ಶಿಸ್ತು, ಪ್ರಾಮಾಣಿಕತೆ, ಸ್ವಾವಲಂಬನೆಗೆ ಆದ್ಯತೆ. ಕರ್ತವ್ಯನಿಷ್ಠೆ, ಪರೋಪಕಾರ, ಸರ್ವ ಧರ್ಮ ಸಮನ್ವಯದ ಸರ್ವತೋಮುಖ ಬೆಳವಣಿಗೆಯ ಆದ್ಯತೆಯೊಂದಿಗೆ ನೈತಿಕ ಶಿಕ್ಷಣದ ಗುರಿಯೇ ನಮ್ಮ ಧ್ಯೇಯ.
         </p>
     </div>
 
@@ -143,38 +168,36 @@
 
     <!-- History Section -->
     <div id="history" class="container mt-5">
-    <div class="section-title text-center">
-        <h2 class="lang-en">Our History</h2>
-        <h2 class="lang-kn">ನಮ್ಮ ಇತಿಹಾಸ</h2>
-    </div>
-    <p class="lang-en">
-        The 'Punacha Pariyalthadka Aided Higher Primary School,' established in 1905 as a symbol of the generosity of the late Chakrakodi Sri 
-        Subbanna Shastry with the aim of promoting the education of poor students in the village, has a history spanning nearly 120 years."
-    </p>
-    <p class="lang-kn">
-        ಕ್ರಿ.ಶ 1905ರಲ್ಲಿ ಊರ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳ ಶೈಕ್ಷಣಿಕ ಹಿತದೃಷ್ಟಿಯಿಂದ ಕೀರ್ತಿಶೇಷರಾದ ಚಕ್ರಕೋಡಿ ಶ್ರೀ ಸುಬ್ಬಣ್ಣ ಶಾಸ್ತ್ರಿಗಳ ಉದಾರತೆಯ ಪ್ರತೀಕವಾಗಿ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ " ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ" ಗೆ 
-        ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
-
-    </p>
+        <div class="section-title text-center">
+            <h2 class="lang-en">Our History</h2>
+            <h2 class="lang-kn">ನಮ್ಮ ಇತಿಹಾಸ</h2>
+        </div>
+        <p class="lang-en">
+            The 'Punacha Pariyalthadka Aided Higher Primary School,' established in 1905 as a symbol of the generosity of the late Chakrakodi Sri 
+            Subbanna Shastry with the aim of promoting the education of poor students in the village, has a history spanning nearly 120 years."
+        </p>
+        <p class="lang-kn">
+            ಕ್ರಿ.ಶ 1905ರಲ್ಲಿ ಊರ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳ ಶೈಕ್ಷಣಿಕ ಹಿತದೃಷ್ಟಿಯಿಂದ ಕೀರ್ತಿಶೇಷರಾದ ಚಕ್ರಕೋಡಿ ಶ್ರೀ ಸುಬ್ಬಣ್ಣ ಶಾಸ್ತ್ರಿಗಳ ಉದಾರತೆಯ ಪ್ರತೀಕವಾಗಿ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ " ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ" ಗೆ 
+            ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
+        </p>
     </div>
 
     <!-- Campus Section -->
     <div id="campus" class="container mt-5">
-    <div class="section-title text-center">
-        <h2 class="lang-en">Our Campus</h2>
-        <h2 class="lang-kn">ನಮ್ಮ ಆವರಣ</h2>
+        <div class="section-title text-center">
+            <h2 class="lang-en">Our Campus</h2>
+            <h2 class="lang-kn">ನಮ್ಮ ಆವರಣ</h2>
+        </div>
+        <p class="lang-en">
+            The school campus is situated in a serene rural setting, providing a peaceful environment conducive to learning. Our facilities include spacious classrooms, a library, playground, and computer lab.
+        </p>
+        <p class="lang-kn">
+            ಶಾಲೆಯ ಆವರಣವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಹೊಂದಲ್ಪಟ್ಟಿದೆ, ಇದು ಶಾಂತ ವಾತಾವರಣವನ್ನು ಕಲಿಕೆಯ ಸಂಬಂಧ ಅನುಕೂಲಕರವಾಗಿಸುತ್ತದೆ. ನಮ್ಮ ಸೌಕರ್ಯಗಳಲ್ಲಿ ವಿಶಾಲವಾದ ತರಗತಿ ಕೊಠಡಿಗಳು, ಗ್ರಂಥಾಲಯ, ಆಟದ ಮೈದಾನ ಮತ್ತು ಕಂಪ್ಯೂಟರ್ ಲ್ಯಾಬ್ ಅನ್ನು ಹೊಂದಿದೆ.
+        </p>
     </div>
-    <p class="lang-en">
-        The school campus is situated in a serene rural setting, providing a peaceful environment conducive to learning. Our facilities include spacious classrooms, a library, playground, and computer lab.
-    </p>
-    <p class="lang-kn">
-        ಶಾಲೆಯ ಆವರಣವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಹೊಂದಲ್ಪಟ್ಟಿದೆ, ಇದು ಶಾಂತ ವಾತಾವರಣವನ್ನು ಕಲಿಕೆಯ ಸಂಬಂಧ ಅನುಕೂಲಕರವಾಗಿಸುತ್ತದೆ. ನಮ್ಮ ಸೌಕರ್ಯಗಳಲ್ಲಿ ವಿಶಾಲವಾದ ತರಗತಿ ಕೊಠಡಿಗಳು, ಗ್ರಂಥಾಲಯ, ಆಟದ ಮೈದಾನ ಮತ್ತು ಕಂಪ್ಯೂಟರ್ ಲ್ಯಾಬ್ ಅನ್ನು ಹೊಂದಿದೆ.
-    </p>
-    </div>
-
 
     <!-- Contact Section -->
-    <div  id="contact" class="container mt-5 mb-5">
+    <div id="contact" class="container mt-5 mb-5">
         <div class="section-title text-center">
             <h2 class="lang-en">Contact Us</h2>
             <h2 class="lang-kn">ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</h2>
@@ -195,27 +218,30 @@
         <p class="lang-kn">&copy; 2024 ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</p>
     </footer>
 
-    <!-- Bootstrap and jQuery JS -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
     <script>
-        function toggleLanguage() {
-            var selectedLanguage = document.getElementById('language').value;
+        function setLanguage(language) {
             var englishElements = document.querySelectorAll('.lang-en');
             var kannadaElements = document.querySelectorAll('.lang-kn');
 
-            if (selectedLanguage === 'en') {
+            if (language === 'en') {
                 englishElements.forEach(el => el.style.display = 'block');
                 kannadaElements.forEach(el => el.style.display = 'none');
+                languageDropdown.textContent = 'Select Language'; // Change text to English
             } else {
                 englishElements.forEach(el => el.style.display = 'none');
                 kannadaElements.forEach(el => el.style.display = 'block');
+                languageDropdown.textContent = 'ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ'; // Change text to Kannada
             }
         }
 
         window.onload = function() {
-            toggleLanguage();
+            setLanguage('en'); // Set default language to English
         };
     </script>
 </body>
