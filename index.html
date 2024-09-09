@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Punacha Pariyalthadka Aided Higher Primary School</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,9 +58,14 @@
             padding: 15px;
             text-align: center;
         }
-        .lang-en, .lang-kn {
+        .lang-en {
             display: none;
         }
+        .lang-kn {
+        font-family: 'Noto Sans Kannada', sans-serif;
+        font-size: 1.1em; /* Adjust size as needed */
+        }
+
        /* Adjust logo size and positioning for larger screens */
         @media (min-width: 768px) {
             .jumbotron .logo {
@@ -75,6 +82,9 @@
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
+            }
+            .lang-kn {
+                font-size: 1.2em; /* Larger size for smaller screens if needed */
             }
             .jumbotron {
                 padding: 20px;
@@ -98,6 +108,8 @@
         }
 
         .carousel-caption {
+            display: block !important;
+            font-size: 1.2em;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
