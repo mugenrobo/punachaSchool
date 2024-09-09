@@ -15,6 +15,7 @@
             background-color: #2c3e50;
             color: white;
             padding: 10px 0;
+            position: relative;
         }
         nav a {
             color: white !important;
@@ -22,11 +23,7 @@
         }
         .jumbotron {
             position: relative;
-
-            
-
             padding: 30px;
-
             background-color: #34495e;
             color: white;
             text-align: center;
@@ -34,9 +31,6 @@
         }
         .jumbotron .logo {
             position: absolute;
-
-            
-
             top: 10px; /* Position logo slightly away from top */
             left: 10px; /* Align logo to the left */
             max-height: 80px; /* Control logo size for mobile */
@@ -68,9 +62,6 @@
        /* Adjust logo size and positioning for larger screens */
         @media (min-width: 768px) {
             .jumbotron .logo {
-
-          
-
             top: -20px; /* Higher position for desktop */
             left: 20px; /* Left-align the logo */
             max-height: 150px; /* Larger logo for desktop */
@@ -103,8 +94,7 @@
         .dropdown-menu {
             z-index: 2000; /* Ensures it's above other elements */
             background-color: #2c3e50; /* Background color of the dropdown */
-            /* border: none; /* Remove border if necessary */
-            position: absolute;
+            position: absolute; /* Remove border if necessary */
         }
 
         /* Custom styles for the dropdown items */
@@ -120,6 +110,24 @@
         /* Add padding to each section to account for the fixed navbar */
         section {
             scroll-margin-top: 80px; /* Adjust this value based on your navbar's height */
+        }
+         /* Move the language selector to the top right corner */
+         .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .language-selector .dropdown-menu {
+            background-color: #2c3e50;
+            border: none;
+        }
+        .language-selector .dropdown-item {
+            color: white;
+        }
+        .language-selector .dropdown-item:hover {
+            background-color: #34495e;
+            color: #f1c40f;
         }
     </style>
 </head>
@@ -154,22 +162,22 @@
                     <li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#contact">ಸಂಪರ್ಕಿಸಿ</a></li>
-
-                    <!-- Language Selector in Navbar -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select Language
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a>
-                            <a class="dropdown-item" href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    <!-- Language Selector Dropdown -->
+    <div class="language-selector">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                <a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a>
+                <a class="dropdown-item" href="#" onclick="setLanguage('kn')">ಕನ್ನಡ</a>
+            </div>
+        </div>
+    </div>
    
 
     <!-- Mission Section -->
@@ -179,9 +187,13 @@
             <h2 class="lang-kn">ನಮ್ಮ ಧ್ಯೇಯ</h2>
         </div>
         <p class="lang-en">
-            Discipline, Honesty, and Self-Reliance: Fostering Moral Integrity and Holistic Development Through Unity in Diversity.
+            At Punacha Pariyalthadka Aided Higher Primary School, our mission is to provide quality education in a rural setting, empowering underprivileged 
+            children with knowledge, skills, and values for a brighter future. We prioritize discipline, honesty, and self-reliance, fostering moral integrity 
+            and holistic development through unity in diversity, guiding students toward a balanced and meaningful life.
         </p>
         <p class="lang-kn">
+            ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ, ನಮ್ಮ ಧ್ಯೇಯವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು ಮತ್ತು ಹಿಂದುಳಿದ ವರ್ಗದ 
+            ಮಕ್ಕಳಿಗೆ ಶ್ರೇಷ್ಠ ಜೀವನವನ್ನು ನಡೆಸಲು ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವುದು.
             ಶಿಸ್ತು, ಪ್ರಾಮಾಣಿಕತೆ, ಸ್ವಾವಲಂಬನೆಗೆ ಆದ್ಯತೆ. ಕರ್ತವ್ಯನಿಷ್ಠೆ, ಪರೋಪಕಾರ, ಸರ್ವ ಧರ್ಮ ಸಮನ್ವಯದ ಸರ್ವತೋಮುಖ ಬೆಳವಣಿಗೆಯ ಆದ್ಯತೆಯೊಂದಿಗೆ ನೈತಿಕ ಶಿಕ್ಷಣದ ಗುರಿಯೇ ನಮ್ಮ ಧ್ಯೇಯ.
         </p>
     </div>
