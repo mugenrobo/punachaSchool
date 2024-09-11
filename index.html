@@ -41,10 +41,31 @@
         
         /* Ensure text moves below the logo */
         .jumbotron h2 {
-            margin-top: 100px; /* Add margin to push the text down */
-            padding: 0 20px;
+            font-size: 2.5em; /* Default font size for both English and Kannada */
+            font-weight: bold; /* Make the text bold */
+            margin-top: 30px;
+            padding: 20px;
 
         }
+
+        .jumbotron .lang-kn {
+            font-size: 2.5em; /* Same size as the English version */
+            font-weight: bold; /* Ensure Kannada text is bold */
+            line-height: 1.2; /* Ensure proper line spacing */
+        }
+
+        /* General Heading Style */
+    .section-title h2 {
+        font-size: 2.5em; /* Default heading size for both languages */
+        font-weight: bold; /* Default bold style for both languages */
+        }
+
+/* Specific Adjustment for Kannada Headings */
+        .section-title .lang-kn {
+            font-size: 2.5em; /* Same size as the English headings */
+            font-weight: bold; /* Ensure Kannada headings are bold */
+            line-height: 1.2; /* Ensure proper line spacing */
+    }
         /* Reduce the padding for the heading to ensure no overlap with the logo */
         .jumbotron h2 {
             padding-top: 45px; /* Add top padding to move the text below the logo */
@@ -100,7 +121,6 @@
             top: 0;
             z-index: 1000; /* Ensure it stays above other content */
         }
-
         /* Carousel Image Styling */
         .carousel-item img {
             width: 70%;
@@ -154,6 +174,60 @@
             background-color: #34495e;
             color: #f1c40f;
         }
+
+
+        #history {
+            background-color: #f9f9f9; /* Light background for the section */
+            padding: 40px 0; /* Add padding around the section */
+        }
+
+        #history .section-title {
+            margin-bottom: 30px;
+        }
+
+        #history img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow to the image */
+        }
+
+    #history p {
+        font-size: 1.1em;
+        line-height: 1.6; /* Improves text readability */
+        margin-bottom: 20px;
+    }
+
+    #history .col-md-6 {
+        margin-bottom: 20px; /* Adds space between columns on small screens */
+    }
+
+
+    #mission {
+    background-image: url('assets/images/school_image.jpeg'); /* Replace with your image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Optional: Creates a parallax scrolling effect */
+    color: white; /* Make text color white to ensure readability */
+    padding: 100px 0; /* Add padding to give space to the content */
+    position: relative; /* Needed for the overlay */
+    z-index: 1;
+    background-attachment: scroll;
+}
+
+/* Optional: Semi-transparent overlay for better text readability */
+    #mission::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+        z-index: -1; /* Place the overlay behind the content */
+    }
+
+
     </style>
 </head>
 <body>
@@ -208,23 +282,29 @@
     </div>
    
 
-    <!-- Mission Section -->
-    <div id="mission" class="container mt-5">
-        <div class="section-title text-center">
-            <h2 class="lang-en">Our Mission</h2>
-            <h2 class="lang-kn">ನಮ್ಮ ಧ್ಯೇಯ</h2>
-        </div>
-        <p class="lang-en">
-            At Punacha Pariyalthadka Aided Higher Primary School, our mission is to provide quality education in a rural setting, empowering underprivileged 
-            children with knowledge, skills, and values for a brighter future. We prioritize discipline, honesty, and self-reliance, fostering moral integrity 
-            and holistic development through unity in diversity, guiding students toward a balanced and meaningful life.
-        </p>
-        <p class="lang-kn">
-            ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ, ನಮ್ಮ ಧ್ಯೇಯವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು ಮತ್ತು ಹಿಂದುಳಿದ ವರ್ಗದ 
-            ಮಕ್ಕಳಿಗೆ ಶ್ರೇಷ್ಠ ಜೀವನವನ್ನು ನಡೆಸಲು ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವುದು.
-            ಶಿಸ್ತು, ಪ್ರಾಮಾಣಿಕತೆ, ಸ್ವಾವಲಂಬನೆಗೆ ಆದ್ಯತೆ. ಕರ್ತವ್ಯನಿಷ್ಠೆ, ಪರೋಪಕಾರ, ಸರ್ವ ಧರ್ಮ ಸಮನ್ವಯದ ಸರ್ವತೋಮುಖ ಬೆಳವಣಿಗೆಯ ಆದ್ಯತೆಯೊಂದಿಗೆ ನೈತಿಕ ಶಿಕ್ಷಣದ ಗುರಿಯೇ ನಮ್ಮ ಧ್ಯೇಯ.
-        </p>
+    <!-- Our Mission Section with Background Image -->
+<div id="mission" class="container-fluid mt-5">
+    <div class="section-title text-center">
+        <h2 class="lang-en">Our Mission</h2>
+        <h2 class="lang-kn">ನಮ್ಮ ಧ್ಯೇಯ</h2>
     </div>
+
+    <div class="row justify-content-center text-center">
+        <div class="col-md-8">
+            <p class="lang-en">
+                At Punacha Pariyalthadka Aided Higher Primary School, our mission is to provide quality education in a rural setting, 
+                empowering underprivileged children with knowledge, skills, and values for a brighter future. We prioritize discipline, 
+                honesty, and self-reliance, fostering moral integrity and holistic development through unity in diversity.
+            </p>
+            <p class="lang-kn">
+                ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ, ನಮ್ಮ ಧ್ಯೇಯವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣವನ್ನು ಒದಗಿಸುವುದು ಮತ್ತು 
+                ಹಿಂದುಳಿದ ವರ್ಗದ ಮಕ್ಕಳಿಗೆ ಶ್ರೇಷ್ಠ ಜೀವನವನ್ನು ನಡೆಸಲು ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವುದು. ಶಿಸ್ತು, ಪ್ರಾಮಾಣಿಕತೆ, ಸ್ವಾವಲಂಬನೆಗೆ ಆದ್ಯತೆ, 
+                ಸರ್ವ ಧರ್ಮ ಸಮನ್ವಯದ ನೈತಿಕ ಶಿಕ್ಷಣವನ್ನು ನೀಡಲು ಎಲ್ಲಾ ಮುಂಬಯಿತ ನೀಡುತ್ತದೆ.
+            </p>
+        </div>
+    </div>
+</div>
+
 
     <!-- Core Values Section -->
     <div id="values" class="container mt-5">
@@ -248,16 +328,27 @@
             <h2 class="lang-en">Our History</h2>
             <h2 class="lang-kn">ನಮ್ಮ ಇತಿಹಾಸ</h2>
         </div>
-        <p class="lang-en">
-            The 'Punacha Pariyalthadka Aided Higher Primary School,' established in 1905 as a symbol of the generosity of the late Chakrakodi Sri 
-            Subbanna Shastry with the aim of promoting the education of poor students in the village, has a history spanning nearly 120 years."
-        </p>
-        <p class="lang-kn">
-            ಕ್ರಿ.ಶ 1905ರಲ್ಲಿ ಊರ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳ ಶೈಕ್ಷಣಿಕ ಹಿತದೃಷ್ಟಿಯಿಂದ ಕೀರ್ತಿಶೇಷರಾದ ಚಕ್ರಕೋಡಿ ಶ್ರೀ ಸುಬ್ಬಣ್ಣ ಶಾಸ್ತ್ರಿಗಳ ಉದಾರತೆಯ ಪ್ರತೀಕವಾಗಿ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ " ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ" ಗೆ 
-            ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
-        </p>
-    </div>
 
+        <!-- History Content with Image -->
+        <div class="row align-items-center mt-4">
+        <!-- Image Column -->
+            <div class="col-md-5">
+                <img src="assets/images/C_subbanna_shastry.jpeg" class="img-fluid rounded shadow" alt="Historical Image" />
+            </div>
+            <!-- Text Column -->
+            <div class="col-md-6">
+                <p class="lang-en">
+                    The 'Punacha Pariyalthadka Aided Higher Primary School,' established in 1905 as a symbol of the generosity of the late 
+                    Chakrakodi Sri Subbanna Shastry with the aim of promoting the education of poor students in the village, has a history 
+                    spanning nearly 120 years."
+                </p>
+                <p class="lang-kn">
+                    ಕ್ರಿ.ಶ 1905ರಲ್ಲಿ ಊರ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳ ಶೈಕ್ಷಣಿಕ ಹಿತದೃಷ್ಟಿಯಿಂದ ಕೀರ್ತಿಶೇಷರಾದ ಚಕ್ರಕೋಡಿ ಶ್ರೀ ಸುಬ್ಬಣ್ಣ ಶಾಸ್ತ್ರಿಗಳ ಉದಾರತೆಯ ಪ್ರತೀಕವಾಗಿ 
+                    ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ " ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ"ಗೆ ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
+                </p>
+            </div>
+        </div>
+    </div>
     <!-- Campus Section -->
     <div id="campus" class="container mt-5">
         <div class="section-title text-center">
