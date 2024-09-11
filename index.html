@@ -127,7 +127,7 @@
 
         .jumbotron h2 {
             margin-top: 0; /* No need for extra margin on desktop */
-
+            
             }
         }
         .jumbotron h2.lang-kn {
@@ -280,6 +280,33 @@
     z-index: -1; /* Ensures the overlay stays behind the content */
 }
 
+
+/* Payment Section Styling */
+#payment {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+}
+
+.qr-code {
+    max-width: 250px; /* Limit the size of the QR code */
+    width: 100%; /* Make sure it scales down for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0;
+    border: 5px solid #2c3e50; /* Add a border around the QR code */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+@media (max-width: 768px) {
+    #payment p {
+        font-size: 1em; /* Reduce text size for mobile readability */
+    }
+    .payment-image {
+        max-width: 200px; /* Adjust image size for smaller screens */
+    }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -313,6 +340,8 @@
                     <li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#events">Current Events</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#events">ಪ್ರಸ್ತುತ ಈವೆಂಟ್ಸ್</a></li>
+                    <li class="nav-item"><a class="nav-link lang-en" href="#payment">Donate Us</a></li>
+                    <li class="nav-item"><a class="nav-link lang-kn" href="#payment">ದೇಣಿಗೆ ನೀಡಲು</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#contact">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#contact">ಸಂಪರ್ಕಿಸಿ</a></li>
                     
@@ -477,6 +506,42 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+        </div>
+    </div>
+
+
+    <!-- Payment Section -->
+    <div id="payment" class="container mt-5">
+        <div class="section-title text-center">
+            <h2 class="lang-en">Support Us</h2>
+            <h2 class="lang-kn">ನಮ್ಮನ್ನು ಬೆಂಬಲಿಸಿ</h2>
+        </div>
+    
+        <div class="row justify-content-center text-center">
+            <div class="col-md-6">
+                <p class="lang-en">
+                    You can support the school by making a donation. Please scan the QR code below to contribute.
+                </p>
+                <p class="lang-kn">
+                    ಶಾಲೆಗೆ ದೇಣಿಗೆ ನೀಡಿ. ಕೊಡುಗೆ ಮಾಡಲು ಕೆಳಗಿನ QR ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ.
+                </p>
+                <img src="assets/images/QR_code.jpg" alt="QR Code for Payment" class="qr-code img-fluid rounded shadow">
+                <p class="mt-2 lang-en"><strong>Scan to Pay</strong></p>
+                <p class="mt-2 lang-kn"><strong>ಪಾವತಿಸಲು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ</strong></p>
+            </div>
+
+            <!-- Second Image (Bank transfer or other payment option) -->
+        <div class="col-md-6 col-lg-4">
+            <p class="lang-en">
+                Alternatively, you can make a payment via bank transfer. Please use the details below to complete the process.
+            </p>
+            <p class="lang-kn">
+                ವೈಕಲ್ಪಿಕವಾಗಿ, ನೀವು ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ ಮೂಲಕ ಪಾವತಿ ಮಾಡಬಹುದು. ಪ್ರಕ್ರಿಯೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಕೆಳಗಿನ ವಿವರಗಳನ್ನು ಬಳಸಿಕೊಳ್ಳಿ.
+            </p>
+            <img src="assets/images/manavi.jpg" alt="Bank Transfer Image" class="payment-image img-fluid rounded shadow">
+            <p class="mt-2 lang-en"><strong>Bank Transfer Details</strong></p>
+            <p class="mt-2 lang-kn"><strong>ಬ್ಯಾಂಕ್ ವರ್ಗಾವಣೆ ವಿವರಗಳು</strong></p>
+        </div>
         </div>
     </div>
 
