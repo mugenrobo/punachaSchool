@@ -60,7 +60,7 @@
         font-weight: bold; /* Default bold style for both languages */
         }
 
-/* Specific Adjustment for Kannada Headings */
+    /* Specific Adjustment for Kannada Headings */
         .section-title .lang-kn {
             font-size: 2.5em; /* Same size as the English headings */
             font-weight: bold; /* Ensure Kannada headings are bold */
@@ -86,6 +86,36 @@
         font-family: 'Noto Sans Kannada', sans-serif;
         font-size: 1.1em; /* Adjust size as needed */
         }
+        .navbar-brand {
+            flex: 1; /* Ensure logo takes only the necessary space */
+        
+        }
+
+        .navbar-nav {
+            flex: 2; /* Navigation takes the rest of the space */
+            justify-content: flex-end;
+        }
+        /* Adjustments for smaller screens like laptops or tablets */
+        @media (max-width: 1024px) {
+            header h1 {
+            font-size: 2em; /* Reduce heading font size */
+        }
+
+        .jumbotron h2 {
+            font-size: 1.5em; /* Adjust jumbotron heading size */
+        }
+
+    .navbar-brand img {
+        width: 100px;
+        max-width: 100px; /* Reduce the size of the logo */
+        height: auto; /* Maintain aspect ratio */
+        flex: 1; /* Ensure logo takes only the necessary space */
+    }
+
+    .jumbotron {
+        padding: 20px; /* Adjust jumbotron padding */
+    }
+}
 
        /* Adjust logo size and positioning for larger screens */
         @media (min-width: 768px) {
@@ -129,6 +159,9 @@
         }
         /* Make the navbar sticky */
         .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: -webkit-sticky; /* For Safari */
             position: sticky;
             top: 0;
@@ -246,7 +279,7 @@
 
      <!-- Jumbotron Section -->
      <div class="jumbotron">
-        <h2 class="lang-en"> Punacha Pariyalthadka Aided Higher Primary School</h2>
+        <h2 class="lang-en"> Punacha Pariyalthadka Aided Higher Primary School</h2> 
         <h2 class="lang-kn">ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ</h2>
 
          <!-- Logo in the right corner of the Jumbotron -->
@@ -350,13 +383,13 @@
             <!-- Text Column -->
             <div class="col-md-6">
                 <p class="lang-en">
-                    The 'Punacha Pariyalthadka Aided Higher Primary School,' established in 1905 as a symbol of the generosity of the late 
+                    The "Punacha Pariyalthadka Aided Higher Primary School", established in 1905 as a symbol of the generosity of the late 
                     Chakrakodi Sri Subbanna Shastry with the aim of promoting the education of poor students in the village, has a history 
-                    spanning nearly 120 years."
+                    spanning nearly 120 years.
                 </p>
                 <p class="lang-kn">
                     ಕ್ರಿ.ಶ 1905ರಲ್ಲಿ ಊರ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳ ಶೈಕ್ಷಣಿಕ ಹಿತದೃಷ್ಟಿಯಿಂದ ಕೀರ್ತಿಶೇಷರಾದ ಚಕ್ರಕೋಡಿ ಶ್ರೀ ಸುಬ್ಬಣ್ಣ ಶಾಸ್ತ್ರಿಗಳ ಉದಾರತೆಯ ಪ್ರತೀಕವಾಗಿ 
-                    ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ " ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ"ಗೆ ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
+                    ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿರುವ "ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ"ಗೆ ಸುಮಾರು 120 ವರ್ಷಗಳ ಇತಿಹಾಸವಿದೆ.
                 </p>
             </div>
         </div>
