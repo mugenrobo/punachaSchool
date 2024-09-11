@@ -110,6 +110,19 @@
             .jumbotron {
                 padding: 20px;
             }
+            #mission {
+                background-size: contain; /* Ensure the entire image is visible on smaller screens */
+                background-position: top center; /* Adjust position for better visibility */
+                padding: 60px 15px; /* Reduce padding for mobile devices */
+            }
+            /* Adjust font size for readability on mobile */
+         #mission h2 {
+            font-size: 1.8em; /* Make heading slightly smaller on mobile */
+            }
+
+            #mission p {
+                font-size: 1em; /* Adjust paragraph font size for mobile readability */
+            }
         }
         html {
             scroll-behavior: smooth;
@@ -216,17 +229,16 @@
 }
 
 /* Optional: Semi-transparent overlay for better text readability */
-    #mission::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-        z-index: -1; /* Place the overlay behind the content */
-    }
-
+#mission::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Ensures the overlay stays behind the content */
+}
 
     </style>
 </head>
@@ -367,7 +379,7 @@
      <div id="events" class="container mt-5 mb-5">
         <div class="section-title text-center">
             <h2 class="lang-en">Current Events</h2>
-            <h2 class="lang-kn">ಪ್ರಸ್ತುತ ಈವೆಂಟ್ಸ್</h2>
+            <h2 class="lang-kn">ಪ್ರಸ್ತುತ ಘಟನೆಗಳು</h2>
         </div>
 
         <!-- Bootstrap Carousel for Event Images -->
