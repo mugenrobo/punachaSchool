@@ -25,33 +25,41 @@
         }
         .jumbotron {
             position: relative;
-            padding: 30px;
+            padding: 30px 15px; /* Add universal padding */
             background-color: #34495e;
             color: white;
             text-align: center;
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the heading */
+            flex-wrap: wrap; /* Ensure proper wrapping on smaller screens */
         }
         .jumbotron .logo {
             position: absolute;
             top: 20px; /* Position logo slightly away from top */
             left: 10px; /* Align logo to the left */
             max-height: 70px; /* Control logo size for mobile */
+            margin-right: 15px; /* Add some space between the logo and heading */
             width: auto; /* Maintain aspect ratio */
+           
         }
         
         /* Ensure text moves below the logo */
         .jumbotron h2 {
-            font-size: 2.5em; /* Default font size for both English and Kannada */
-            font-weight: bold; /* Make the text bold */
-            margin-top: 30px;
-            padding: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+            padding-top: 10px; /* Adjust space between the logo and heading */
+            flex: 1 1 100%; /* Ensure the heading takes the full width on small screens */
+            text-align: center; /* Center the heading */
 
         }
 
         .jumbotron .lang-kn {
-            font-size: 2.3em; /* Same size as the English version */
-            font-weight: bold; /* Ensure Kannada text is bold */
-            line-height: 1.2; /* Ensure proper line spacing */
+            font-size: 2.3em; /* Slightly smaller size for Kannada text */
+            font-weight: bold;
+            line-height: 1.2;
         }
 
         /* General Heading Style */
@@ -160,6 +168,19 @@
             #mission p {
                 font-size: 1em; /* Adjust paragraph font size for mobile readability */
             }
+            .navbar-brand {
+                font-size: 1.2rem; /* Adjust the school name font size on smaller screens */
+            }
+            .navbar-toggler {
+                margin-right: 10px; /* Add some spacing on the right */
+            }
+            .carousel-caption-below {
+                font-size: 1em; /* Adjust caption font size for mobile */
+                padding: 8px;
+            }
+            .carousel-caption-below h5 {
+             font-size: 1em; /* Adjust heading size for smaller screens */
+            }
         }
         html {
             scroll-behavior: smooth;
@@ -173,19 +194,45 @@
             position: sticky;
             top: 0;
             z-index: 1000; /* Ensure it stays above other content */
+            background-color: #2c3e50; /* Ensure the background color is consistent */
+            width: 100%; /* Ensure it spans the full width of the screen */
+        }
+        .navbar-brand {
+            font-size: 1.5rem; /* Adjust the font size for the school name */
+            font-weight: bold; /* Make sure the name is prominent */
+            color: white;
+            display: inline-block; /* Ensure it aligns properly */
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1); /* Style the hamburger icon */
+        }
+
+        .navbar-toggler-icon {
+            background-color: white; /* Make sure the hamburger icon is visible */
+        }
+
+        .navbar-collapse {
+            justify-content: flex-end; /* Ensure menu items are aligned to the right */
         }
         /* Carousel Image Styling */
         .carousel-item img {
-            width: 70%;
+            width: 100%;
             height: auto;
+            border-radius: 5px; /* Optional: Rounded corners for the image */
         }
 
-        .carousel-caption {
-            display: block !important;
-            font-size: 1.2em;
-            background: rgba(0, 0, 0, 0.5);
+        /* Style for captions below the images */
+        .carousel-caption-below {
+            margin-top: 15px; /* Space between image and caption */
             padding: 10px;
-            border-radius: 5px;
+            font-size: 1.2em;
+            background: rgba(0, 0, 0, 0.05); /* Light background for caption */
+            color: #333; /* Text color */
+        }
+
+        .carousel-caption-below h5 {
+            margin-bottom: 5px;
+            font-size: 1.1em; /* Slightly smaller font size */
         }
     
         /* Custom styles for the dropdown menu */
@@ -336,8 +383,8 @@
                     <li class="nav-item"><a class="nav-link lang-kn" href="#values">ಪ್ರಮುಖ ಮೌಲ್ಯಗಳು</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#history">History</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#history">ಇತಿಹಾಸ</a></li>
-                    <li class="nav-item"><a class="nav-link lang-en" href="#campus">Campus</a></li>
-                    <li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>
+                  <!--<li class="nav-item"><a class="nav-link lang-en" href="#campus">Campus</a></li>-->  
+                  <!--<li class="nav-item"><a class="nav-link lang-kn" href="#campus">ಆವರಣ</a></li>-->  
                     <li class="nav-item"><a class="nav-link lang-en" href="#events">Current Events</a></li>
                     <li class="nav-item"><a class="nav-link lang-kn" href="#events">ಪ್ರಸ್ತುತ ಈವೆಂಟ್ಸ್</a></li>
                     <li class="nav-item"><a class="nav-link lang-en" href="#payment">Donate Us</a></li>
@@ -432,7 +479,7 @@
             </div>
         </div>
     </div>
-    <!-- Campus Section -->
+    <!-- Campus Section 
     <div id="campus" class="container mt-5">
         <div class="section-title text-center">
             <h2 class="lang-en">Our Campus</h2>
@@ -444,16 +491,17 @@
         <p class="lang-kn">
             ಶಾಲೆಯ ಆವರಣವು ಗ್ರಾಮೀಣ ಪರಿಸರದಲ್ಲಿ ಹೊಂದಲ್ಪಟ್ಟಿದೆ, ಇದು ಶಾಂತ ವಾತಾವರಣವನ್ನು ಕಲಿಕೆಯ ಸಂಬಂಧ ಅನುಕೂಲಕರವಾಗಿಸುತ್ತದೆ. ನಮ್ಮ ಸೌಕರ್ಯಗಳಲ್ಲಿ ವಿಶಾಲವಾದ ತರಗತಿ ಕೊಠಡಿಗಳು, ಗ್ರಂಥಾಲಯ, ಆಟದ ಮೈದಾನ ಮತ್ತು ಕಂಪ್ಯೂಟರ್ ಲ್ಯಾಬ್ ಅನ್ನು ಹೊಂದಿದೆ.
         </p>
-    </div>
+    </div> -->
 
-     <!-- Current Events Section with Carousel -->
+
+     <!-- Current Events Section with Carousel 
      <div id="events" class="container mt-5 mb-5">
         <div class="section-title text-center">
             <h2 class="lang-en">Current Events</h2>
             <h2 class="lang-kn">ಪ್ರಸ್ತುತ ಘಟನೆಗಳು</h2>
         </div>
 
-        <!-- Bootstrap Carousel for Event Images -->
+         Bootstrap Carousel for Event Images 
         <div id="eventCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -478,28 +526,28 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/Shilanyasa2.jpeg" class="d-block w-100" alt="Event 3">
+                    <img src="assets/images/Shilanyasa2.jpeg" class="d-block w-100" alt="Event 4">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="lang-en">Foundation stone laying ceremony of the new building.</h5>
                         <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/Shilanyasa3.jpeg" class="d-block w-100" alt="Event 3">
+                    <img src="assets/images/Shilanyasa3.jpeg" class="d-block w-100" alt="Event 5">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="lang-en">Foundation stone laying ceremony of the new building.</h5>
                         <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/Press1.jpeg" class="d-block w-100" alt="Event 3">
+                    <img src="assets/images/Press1.jpeg" class="d-block w-100" alt="Event 6">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="lang-en">Press Release of the Foundation stone laying ceremony.</h5>
                         <h5 class="lang-kn">ಪತ್ರಿಕೆಯಲ್ಲಿ ಪ್ರಕಟಗೊಂಡ ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ </h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/buildingPlan_meeting1.jpg" class="d-block w-100" alt="Event 3">
+                    <img src="assets/images/buildingPlan_meeting1.jpg" class="d-block w-100" alt="Event 7">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="lang-en">A meeting of former students and well-wishers was held at Punacha Pariyalthadka Aided Higher 
                             Primary School on the occasion of the new building's construction, where alumni pledged support and recalled their 
@@ -510,7 +558,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/buildingPlan_meeting2.jpg" class="d-block w-100" alt="Event 3">
+                    <img src="assets/images/buildingPlan_meeting2.jpg" class="d-block w-100" alt="Event 8">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 class="lang-en">A meeting of former students and well-wishers was held at Punacha Pariyalthadka Aided Higher 
                             Primary School on the occasion of the new building's construction, where alumni pledged support and recalled their 
@@ -521,7 +569,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Carousel Controls -->
+             Carousel Controls 
             <a class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -532,6 +580,124 @@
             </a>
         </div>
     </div>
+-->
+
+<!-- Current Events Section with Carousel -->
+<div id="events" class="container mt-5 mb-5">
+    <div class="section-title text-center">
+        <h2 class="lang-en">Current Events</h2>
+        <h2 class="lang-kn">ಪ್ರಸ್ತುತ ಘಟನೆಗಳು</h2>
+    </div>
+
+    <!-- Bootstrap Carousel for Event Images -->
+    <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- First Image -->
+            <div class="carousel-item active">
+                <img src="assets/images/SchoolDesign.jpg" class="d-block w-100" alt="Event 1">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">New Building</h5>
+                    <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ನೀಲಿ ನಕಾಷೆ</h5>
+                </div>
+            </div>
+
+            <!-- Second Image -->
+            <div class="carousel-item">
+                <img src="assets/images/SchoolDesign2.jpg" class="d-block w-100" alt="Event 2">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">New Building</h5>
+                    <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ನೀಲಿ ನಕಾಷೆ</h5>
+                </div>
+            </div>
+
+            <!-- Third Image -->
+            <div class="carousel-item">
+                <img src="assets/images/Shilanyasa.jpeg" class="d-block w-100" alt="Event 3">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">Foundation stone laying ceremony of the new building.</h5>
+                    <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
+                </div>
+            </div>
+
+            <!-- Fourth Image -->
+            <div class="carousel-item">
+                <img src="assets/images/Shilanyasa2.jpeg" class="d-block w-100" alt="Event 4">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">Foundation stone laying ceremony of the new building.</h5>
+                    <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
+                </div>
+            </div>
+
+            <!-- Fifth Image -->
+            <div class="carousel-item">
+                <img src="assets/images/Shilanyasa3.jpeg" class="d-block w-100" alt="Event 5">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">Foundation stone laying ceremony of the new building.</h5>
+                    <h5 class="lang-kn">ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
+                </div>
+            </div>
+
+            <!-- Sixth Image -->
+            <div class="carousel-item">
+                <img src="assets/images/Press1.jpeg" class="d-block w-100" alt="Event 6">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">Press Release of the Foundation stone laying ceremony.</h5>
+                    <h5 class="lang-kn">ಪತ್ರಿಕೆಯಲ್ಲಿ ಪ್ರಕಟಗೊಂಡ ನೂತನ ಕಟ್ಟಡದ ಶಿಲಾನ್ಯಾಸ ಕಾರ್ಯಕ್ರಮ</h5>
+                </div>
+            </div>
+
+            <!-- Seventh Image -->
+            <div class="carousel-item">
+                <img src="assets/images/buildingPlan_meeting1.jpg" class="d-block w-100" alt="Event 7">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">
+                        A meeting of former students and well-wishers was held at Punacha Pariyalthadka Aided Higher Primary School 
+                        on the occasion of the new building's construction, where alumni pledged support and recalled their formative days at the school.
+                    </h5>
+                    <h5 class="lang-kn">
+                        ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯ ನೂತನ ಕಟ್ಟಡ ನಿರ್ಮಾಣದ ಪ್ರಯುಕ್ತ 
+                        ಶಾಲೆಯ ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ವಿದ್ಯಾಭಿಮಾನಿಗಳ ಸಭೆ ನಡೆಯಿತು, 
+                        ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿಗಳು ಶಾಲೆಯ ಅಭಿವೃದ್ಧಿಗೆ ತಾವು ಕೈಜೋಡಿಸುವುದಾಗಿ ಭರವಸೆ ನೀಡಿದರು ಮತ್ತು ತಮ್ಮ ಪ್ರಾಥಮಿಕ ವಿದ್ಯೆಯ ದಿನಗಳನ್ನು ನೆನಸಿದರು.
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Eighth Image -->
+            <div class="carousel-item">
+                <img src="assets/images/buildingPlan_meeting2.jpg" class="d-block w-100" alt="Event 8">
+                <div class="carousel-caption-below text-center">
+                    <h5 class="lang-en">
+                        A meeting of former students and well-wishers was held at Punacha Pariyalthadka Aided Higher Primary School 
+                        on the occasion of the new building's construction, where alumni pledged support and recalled their formative days at the school.
+                    </h5>
+                    <h5 class="lang-kn">
+                        ಪುಣಚ ಪರಿಯಾಲ್ತಡ್ಕ ಅನುದಾನಿತ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯ ನೂತನ ಕಟ್ಟಡ ನಿರ್ಮಾಣದ ಪ್ರಯುಕ್ತ 
+                        ಶಾಲೆಯ ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ವಿದ್ಯಾಭಿಮಾನಿಗಳ ಸಭೆ ನಡೆಯಿತು, 
+                        ಹಳೆಯ ವಿದ್ಯಾರ್ಥಿಗಳು ಶಾಲೆಯ ಅಭಿವೃದ್ಧಿಗೆ ತಾವು ಕೈಜೋಡಿಸುವುದಾಗಿ ಭರವಸೆ ನೀಡಿದರು ಮತ್ತು ತಮ್ಮ ಪ್ರಾಥಮಿಕ ವಿದ್ಯೆಯ ದಿನಗಳನ್ನು ನೆನಸಿದರು.
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Carousel Controls -->
+        <a class="carousel-control-prev" href="#eventCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#eventCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
 
 
     <!-- Payment Section -->
