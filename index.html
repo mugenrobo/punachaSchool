@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' https://www.googletagmanager.com https://code.jquery.com https://cdn.jsdelivr.net; 
+        connect-src https://www.google-analytics.com https://code.jquery.com; 
+        img-src 'self' data: https://www.google-analytics.com; 
+        style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com; 
+        frame-ancestors 'none'; 
+        object-src 'none';
+        upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer">
     <title>Punacha Pariyalthadka Aided Higher Primary School</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-802RSQ4S96"></script>
@@ -15,8 +28,11 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', 'G-802RSQ4S96');
+        gtag('config', 'G-802RSQ4S96', {
+        
+            'anonymize_ip': true,  // Anonymizes user's IP for privacy
+            'cookie_flags': 'SameSite=None;Secure'  // Ensures cookies are secure
+        });
     </script>
 
     <style>
