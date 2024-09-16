@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="Content-Security-Policy" content="
+    <!--<meta http-equiv="Content-Security-Policy" content="
         default-src 'self'; 
         script-src 'self' https://www.googletagmanager.com https://code.jquery.com https://cdn.jsdelivr.net; 
         connect-src https://www.google-analytics.com https://code.jquery.com; 
@@ -14,16 +14,15 @@
         upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="referrer" content="no-referrer">
+    <meta name="referrer" content="no-referrer">-->
     <title>Punacha Pariyalthadka Aided Higher Primary School</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
 
-
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-802RSQ4S96"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-802RSQ4S96"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -34,7 +33,6 @@
             'cookie_flags': 'SameSite=None;Secure'  // Ensures cookies are secure
         });
     </script>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -605,25 +603,44 @@
 
 
     <script>
-        function setLanguage(language) {
-            var englishElements = document.querySelectorAll('.lang-en');
-            var kannadaElements = document.querySelectorAll('.lang-kn');
+   function setLanguage(language) {
+        var englishElements = document.querySelectorAll('.lang-en');
+        var kannadaElements = document.querySelectorAll('.lang-kn');
+        var languageDropdown = document.getElementById('languageDropdown');
 
-            if (language === 'en') {
-                englishElements.forEach(el => el.style.display = 'block');
-                kannadaElements.forEach(el => el.style.display = 'none');
-                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
+        if (language === 'en') {
+            englishElements.forEach(function(el) {
+                el.style.display = 'block';  // Show English elements
+            });
+            kannadaElements.forEach(function(el) {
+                el.style.display = 'none';  // Hide Kannada elements
+            });
+            languageDropdown.textContent = 'Switch to Kannada'; // Update dropdown
+            localStorage.setItem('selectedLanguage', 'en');  // Save language preference
+        } else if (language === 'kn') {
+            englishElements.forEach(function(el) {
+                el.style.display = 'none';  // Hide English elements
+            });
+            kannadaElements.forEach(function(el) {
+                el.style.display = 'block';  // Show Kannada elements
+            });
+            languageDropdown.textContent = 'Switch to English';  // Update dropdown
+            localStorage.setItem('selectedLanguage', 'kn');  // Save language preference
+        }
+    }
 
-            } else {
-                englishElements.forEach(el => el.style.display = 'none');
-                kannadaElements.forEach(el => el.style.display = 'block');
-                document.getElementById('languageDropdown').textContent = 'Select Language'; // Change text to English
-            }
+    // Set default language to English unless localStorage has another preference
+    window.onload = function() {
+        var savedLanguage = localStorage.getItem('selectedLanguage');
+        
+        // If no language is saved, default to 'en'
+        if (!savedLanguage) {
+            savedLanguage = 'en';
         }
 
-        window.onload = function() {
-            setLanguage('en'); // Set default language to English
-        };
+        // Set language based on saved preference or default
+        setLanguage(savedLanguage);
+    };
 
         // Close the navbar after clicking a link (on mobile view)
         document.querySelectorAll('.navbar-nav a').forEach(function (navLink) {
